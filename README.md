@@ -8,22 +8,27 @@ The challenge is to consume and transform the proprietary mock data. The proprie
 
 We realise everyone has different levels of skill and experience when it comes to development so we have listed different levels of tasks below for you to choose from. If you do not have the time or the knowledge to complete them all then that's ok, we just want to see how you approach the problem and get a feel for how you code.
 
-**Basic Tasks**
+#### Basic Tasks
 * Create an app that connects the provider service on the exposed TCP port
-* Transform the proprietary data format into JSON using the field names and data types defined in the provider README and the /types endpoint
+* Transform the proprietary data format into JSON using the field names and data types defined in the provider /types endpoint
+* Write unit tests
 
-**Intermediate Tasks**
-* Write tests
-* Create a _feedme_ mongo database with a _fixture_ collection
-* Store the JSON in the collection with a document per fixture. Each document should contain the event data and the child markets and outcomes for the fixture
+#### Intermediate Tasks
+* Save the JSON into a NoSQL store with a document per fixture. Each document should contain the event data and the child markets and outcomes for the fixture
 
-**Advanced Tasks**
-* Implement mongo indexes to allow for fixture queries by _startTime_, _category_, _subCategory_ and _displayed_
-* Implement a way of sharding / partitioning the packets
-* Utilising the sharding / partitioning refactor your app(s) to support running parallel instances 
+#### Advanced Tasks
+Imagine that your app has been in use for a while now but the company has decided to start offering more fixtures. This has massively increased the number of packets being received and you have noticed that your NoSQL writes have become a bottleneck causing a packet latency that is too high for your real time data needs.
 
-**Additional Tasks**
+Separating the responsibility of transforming to JSON and writing to NoSQL into separate apps should help remove the bottleneck and therefore reduce the packet latency. To facilitate doing this you will need to work out a sensible way of sharding / partitioning the JSON packets by implementing the use of a message queue service such as RabbitMQ or Kafka. 
+
+With that context in mind:
+
+* Implement a way of sharding / partitioning the transformed JSON packets via one or more message queues
+* Utilising the message queue(s) move your NoSQL logic into another app that can be run multiple times to enable concurrent NoSQL writes
+
+#### Additional Tasks
 * Implement a front end that displays the hierarchical mongo data. Use the Sky Bet website for layout and navigational inspiration
+* Create a Dockerfile for your app(s)
 
 ## Languages
 
