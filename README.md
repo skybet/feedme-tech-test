@@ -27,7 +27,7 @@ With that context in mind:
 * Utilising the message queue(s) move your NoSQL logic into another app that can be run multiple times to enable concurrent NoSQL writes
 
 #### Additional Tasks
-* Implement a front end that displays the hierarchical mongo data. Use the Sky Bet website for layout and navigational inspiration
+* Implement a front end that displays the hierarchical NoSQL data. Use the Sky Bet website for layout and navigational inspiration
 * Create a Dockerfile for your app(s)
 
 ## Languages
