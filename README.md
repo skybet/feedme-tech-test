@@ -43,8 +43,17 @@ We use a mixture of coding languages at Sky Bet but for data consumption we main
 * If the tests above succeed then you are ready to start coding. If you decide to attempt the Intermediate and Advanced tasks then we suggest adding to or using the services listed in the docker-compose.yml file
 * To destroy the test environment you can type `docker-compose down`
 
-## Submitting Your Test
+## The Deliverable
 
-Please ensure your work is tracked in git and you are committing regularly so we can see how you worked through the various tasks. Please zip up your repo and send it over accompanied by any work notes you feel will help explain your thinking.
+Replace the contents of this README.md with:
 
-Good luck!
+  1. A covering note explaining the technology choices you have made.
+  1. Any instructions required to run your solution and tests in a Linux environment.
+
+Email as an attachment or a link the git bundled repository showing your commit history with all your commits on the master branch:
+
+        git bundle create <anything>.bundle --all --branches
+
+## Equality & Diversity
+
+We consider all candidates equally, fairly and without bias.  To that end, we ask that you do not leave any personally identifying information in your submission (such as your name within an author field or file, or in use as test data).  We run all VCS-based submissions through an anonymiser before assessment, so that there is no identifying information in the commit history, but this will only remove references in the committing author and email address, not deep in the code submitted.
